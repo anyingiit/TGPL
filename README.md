@@ -3,7 +3,9 @@
 
 # TGPL
 
-Tgpl has no README describing its purpose; its manifest (go.mod) marks it as a Go codebase, built with Go.
+A minimal, archived Go module whose single program in 8_1/main.go prints a hard-coded Hello World greeting to standard output.
+
+**English** · [简体中文](README.zh-CN.md)
 
 [![CI](https://github.com/anyingiit/TGPL/actions/workflows/ci.yml/badge.svg)](https://github.com/anyingiit/TGPL/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/anyingiit/TGPL)](LICENSE)
@@ -24,7 +26,13 @@ Tgpl has no README describing its purpose; its manifest (go.mod) marks it as a G
 
 ## About The Project
 
-Tgpl has no README describing its purpose; its manifest (go.mod) marks it as a Go codebase, built with Go.
+This module (`github.com/anyingiit/TGPL`, `go.mod`) holds one program: `8_1/main.go`,
+whose entire body is a call to `fmt.Println` that prints `Hello World!`. There is no
+other source, no tests, and no second package.
+
+The repository is archived, so this is unlikely to grow past that single file. A
+pre-built Windows binary, `8_1/8_1.exe`, is committed next to the source; it is not
+produced by CI and should not be treated as up to date with `main.go`.
 
 See the [open issues](https://github.com/anyingiit/TGPL/issues) for planned features and known issues.
 
@@ -32,19 +40,23 @@ See the [open issues](https://github.com/anyingiit/TGPL/issues) for planned feat
 
 ### Prerequisites
 
-- Git
+- Go 1.18 or newer, the floor `go.mod` declares
 
 ### Installation
 
 ```sh
 git clone https://github.com/anyingiit/TGPL.git
 cd TGPL
+go build -o bin/8_1 ./8_1/...
 ```
 
 ## Usage
 
+Run the built binary; it prints its one line and exits:
+
 ```sh
-TGPL --help
+./bin/8_1
+# Hello World!
 ```
 
 ## Contributing
